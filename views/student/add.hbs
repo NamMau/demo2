@@ -1,0 +1,26 @@
+<form action="/student/add" method="post">
+    <h1>Add new student</h1>
+    <label for="">Student ID</label><br>
+    <input type="text" name="id"><br><br>
+    <label for="">Student Name</label><br>
+    <input type="text" name="name"><br><br>
+    <label for="">Student birthYear</label><br>
+    <input type="number" name="birthYear" min="2000" max="20010"><br><br>
+    <label for="">Student Gender</label><br>
+    Male<input type="radio" name="gender" value="Male">
+    Female<input type="radio" name="gender" value="Female"><br><br>
+    <label for="">Student GPA</label><br>
+    <input type="number" name="gpa"><br><br>
+    <label for="">Student Image</label><br>
+    <input type="url" name="image"><br><br>
+    <label for="">Student City</label><br>
+    <select name="city" id="">
+        {{#each cities }}
+            <option value="{{name}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <label for="">Student motherland</label><br>
+    <input type="text" name="motherland"><br><br>
+
+    <input type="submit" value="Add">
+</form>

@@ -1,0 +1,39 @@
+<center>
+   <a class="btn btn-primary mb-3" href="student/add">Add new student</a>
+   <a class="btn btn-success" href="/deleteall"
+   onclick="return confirm('Are you sure to delete all students ?');"
+   >Delete all students</a>
+</center>
+
+<table class="table table-info">
+   <tr>
+      <th>Student ID</th>
+      <th>Full Name</th>
+      <th>Birth Year</th>
+      <th>Gender</th>
+      <th>GPA</th>
+      <th>Image</th>
+      <th>Motherland</th>
+      <th>Menu</th>
+   </tr>
+   {{#each studentList }}
+   <tr>
+      <td>{{ id }}</td>
+      <td>{{ name }}</td>
+      <td>{{ birthYear }}</td>
+      <td>{{ gender }}</td>
+      <td>{{ gpa }}</td>
+      <td>
+         <img src="{{ image }}" width="100" height="100">
+      </td>
+      <td>{{motherland}}</td>
+      <td>
+         <a class="btn btn-warning" href="/student/edit/{{ _id }}">Edit</a>
+         <a class="btn btn-danger" href="/student/delete/{{ _id }}"
+         onclick="return confirm('Are you sure to delete this student ?');"
+         >Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+
+</table>
